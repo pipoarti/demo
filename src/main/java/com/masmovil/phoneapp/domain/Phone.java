@@ -12,7 +12,7 @@ import lombok.Data;
 @Entity(name = "TPHONES")
 public class Phone implements Serializable {
 	private static final long serialVersionUID = 320023047303013201L;
-	@Id @NotNull Integer id;
+	@Id @NotNull Long id;
 	@NotNull String name;
 	@NotNull String description;
 	@NotNull String image;
