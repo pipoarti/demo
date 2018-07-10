@@ -22,17 +22,15 @@ public class PhoneController {
 	@GetMapping
 	public ResponseEntity<List<Phone>> getPhones() {
 		List<Phone> phones = phoneService.getPhones();
-		return ResponseEntity.ok().body(phones);
+		return ResponseEntity.ok(phones);
 	}
 
 	@GetMapping(value="/{id}")
 	public ResponseEntity<Phone> getPhone(@PathVariable Long id) {
 		Phone phone = phoneService.getPhone(id);
-//		ResponseEntity<Phone> response = new ResponseEntity<Phone>(phone, HttpStatus.OK);
-//		return response;
-		return ResponseEntity.ok().body(phone);
+		return ResponseEntity.ok(phone);
 	}
-//	
+
 //	@PostMapping
 //	public ResponseEntity<Phone> createPhone(@Valid @RequestBody Phone phone) {
 //		Phone savedPhone = phoneService.save(phone);
@@ -72,4 +70,5 @@ public class PhoneController {
 //		
 //		return ResponseEntity.noContent().build();
 //	}
+	
 }

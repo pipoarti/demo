@@ -6,22 +6,21 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-import lombok.Data;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@Data
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity(name = "TPHONES")
 public class Phone implements Serializable {
-	private static final long serialVersionUID = 320023047303013201L;
-	@Id @NotNull Long id;
-	@NotNull String name;
-	@NotNull String description;
-	@NotNull String image;
-	@NotNull Integer price;
 	
-	@Override
-	public String toString() {
-		return "Phone [id=" + id + ", name=" + name + ", description=" + description + ", image=" + image + ", price="
-				+ price + "]";
-	}
+	private static final long serialVersionUID = -9115667835434531212L;
+	@Id @NotNull @JsonSerialize Long id;
+	@NotNull @JsonSerialize String name;
+	@NotNull @JsonSerialize String description;
+	@NotNull @JsonSerialize String image;
+	@NotNull @JsonSerialize Integer price;
 	
 }
