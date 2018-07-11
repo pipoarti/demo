@@ -2,15 +2,13 @@ package com.masmovil.phoneapp.wrapper;
 
 import java.util.List;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 public class PhoneOrderWrapper {
 
-	private @JsonSerialize Long id;
-	private @JsonSerialize String name;
-	private @JsonSerialize String surname;
-	private @JsonSerialize String email;
-	private @JsonSerialize List<Long> phones;
+	private Long id;
+	private String name;
+	private String surname;
+	private String email;
+	private List<Long> phones;
 	
 	public Long getId() {
 		return id;

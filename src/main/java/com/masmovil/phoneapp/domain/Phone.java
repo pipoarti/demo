@@ -4,16 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 @Entity(name = "TPHONES")
 public class Phone {
 	
-	private @Id @NotNull @JsonSerialize Long id;
-	private @NotNull @JsonSerialize String name;
-	private @NotNull @JsonSerialize String description;
-	private @NotNull @JsonSerialize String image;
-	private @NotNull @JsonSerialize Integer price;
+	private @Id @NotNull Long id;
+	private @NotNull String name;
+	private @NotNull String description;
+	private @NotNull String image;
+	private @NotNull Integer price;
 	
 	public Long getId() {
 		return id;

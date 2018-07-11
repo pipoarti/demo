@@ -98,7 +98,6 @@ public class OrderServiceTest extends ServiceBaseTest {
 	
 	@Test(expected=EntityExistsException.class)
 	public void givenAlreadyExistsPhoneOrderWrapper_whenSave_thenReturnEntityExists() {
-		Order order = getOrder(ORDER_ID1, ORDER_NAME1, ORDER_SURNAME1, ORDER_EMAIL1, ORDER_PRICE1);
 		PhoneOrderWrapper phoneOrderWrapper = getPhoneOrderWrapper(ORDER_ID1, ORDER_NAME1, ORDER_SURNAME1, ORDER_EMAIL1, ORDER_PRICE1);
 		when(orderRepository.existsById(ORDER_ID1)).thenReturn(Boolean.TRUE); 
 		orderServiceSpy.save(phoneOrderWrapper);
