@@ -24,10 +24,8 @@ public class PhoneService {
 	
 	public Phone getPhone(Long id) {
 		Optional<Phone> phone = phoneRepository.findById(id);
-		
 		if (!phone.isPresent())
 			throw new EntityNotFoundException("id-" + id);
-
 		return phone.get();  
 	}
 }

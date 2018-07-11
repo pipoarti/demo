@@ -31,44 +31,4 @@ public class PhoneController {
 		return ResponseEntity.ok(phone);
 	}
 
-//	@PostMapping
-//	public ResponseEntity<Phone> createPhone(@Valid @RequestBody Phone phone) {
-//		Phone savedPhone = phoneService.save(phone);
-//
-//		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-//				.buildAndExpand(savedPhone.getId()).toUri();
-//
-//		return ResponseEntity.created(location).build();
-//	}
-//	
-//	@PutMapping("/{id}")
-//	public ResponseEntity<Phone> updatePhone(@PathVariable Long id, @RequestBody Phone phone) {
-//
-//		Phone savedPhone = phoneService.update(id, phone);
-//
-//		return ResponseEntity.noContent().build();
-//	}
-//	
-//	o si vas a devolver el objeto modificado: 
-//	
-//	@PutMapping("/{id}")
-//	public ResponseEntity<Phone> updatePhone(@PathVariable Long id, @RequestBody Phone phone) {
-//
-//		Phone savedPhone = phoneService.update(id, phone);
-//
-//		return ResponseEntity.ok().body(savedPhone);
-//	}
-//	
-//	@DeleteMapping("/{id}")
-//	public ResponseEntity<Phone> deleteStudent(@PathVariable Long id) {
-//		Optional<Phone> phoneOptional = phoneService.findById(id);
-//
-//		if (!phoneOptional.isPresent())
-//			return ResponseEntity.notFound().build();
-//
-//		phoneService.deleteById(id);
-//		
-//		return ResponseEntity.noContent().build();
-//	}
-	
 }
