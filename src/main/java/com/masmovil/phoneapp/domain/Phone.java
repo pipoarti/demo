@@ -14,47 +14,53 @@ public class Phone {
 	private @NotNull @JsonSerialize String description;
 	private @NotNull @JsonSerialize String image;
 	private @NotNull @JsonSerialize Integer price;
-
+	
 	public Long getId() {
 		return id;
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
 	}
 	
 	public String getName() {
 		return name;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
 	public String getDescription() {
 		return description;
-	}
-	
-	public void setDescription(String description) {
-		this.description = description;
 	}
 	
 	public String getImage() {
 		return image;
 	}
 	
-	public void setImage(String image) {
-		this.image = image;
-	}
-	
 	public Integer getPrice() {
 		return price;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 	public void setPrice(Integer price) {
 		this.price = price;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Phone [id=" + id + ", name=" + name + ", description=" + description + ", image=" + image + ", price="
+				+ price + "]";
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -66,7 +72,7 @@ public class Phone {
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -103,10 +109,5 @@ public class Phone {
 			return false;
 		return true;
 	}
-	
-	@Override
-	public String toString() {
-		return "Phone [id=" + id + ", name=" + name + ", description=" + description + ", image=" + image + ", price=" + price + "]";
-	}
-	
+
 }

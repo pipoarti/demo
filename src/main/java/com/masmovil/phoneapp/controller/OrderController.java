@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +26,7 @@ import com.masmovil.phoneapp.wrapper.PhoneOrderWrapper;
 public class OrderController {
 	
 	private static final String PATH_ID = "/{id}";
+	protected final Logger LOG = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	OrderService orderService;
@@ -43,38 +46,9 @@ public class OrderController {
 	@PostMapping
 	public ResponseEntity<Order> createOrder(@Valid @RequestBody PhoneOrderWrapper phoneOrderWrapper) {
 		Order savedOrder = orderService.save(phoneOrderWrapper);
+		LOG.info("Order done: " + savedOrder.toString());
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(PATH_ID).buildAndExpand(savedOrder.getId()).toUri();
 		return ResponseEntity.created(location).build();
 	}
-	
-//	@PutMapping("/{id}")
-//	public ResponseEntity<Phone> updatePhone(@PathVariable Long id, @RequestBody Phone phone) {
-//
-//		Phone savedPhone = phoneService.update(id, phone);
-//
-//		return ResponseEntity.noContent().build();
-//	}
-//	
-//	o si vas a devolver el objeto modificado: 
-//	
-//	@PutMapping("/{id}")
-//	public ResponseEntity<Phone> updatePhone(@PathVariable Long id, @RequestBody Phone phone) {
-//
-//		Phone savedPhone = phoneService.update(id, phone);
-//
-//		return ResponseEntity.ok().body(savedPhone);
-//	}
-//	
-//	@DeleteMapping("/{id}")
-//	public ResponseEntity<Phone> deleteStudent(@PathVariable Long id) {
-//		Optional<Phone> phoneOptional = phoneService.findById(id);
-//
-//		if (!phoneOptional.isPresent())
-//			return ResponseEntity.notFound().build();
-//
-//		phoneService.deleteById(id);
-//		
-//		return ResponseEntity.noContent().build();
-//	}
 	
 }

@@ -20,47 +20,63 @@ public class Order {
 	private String surname;
 	@NotNull
 	private String email;
+	@NotNull
+	private Integer price;
 	@ManyToMany
 	private List<Phone> phones;
 	
 	public Long getId() {
 		return id;
 	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
+	
 	public String getName() {
 		return name;
 	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
+	
 	public String getSurname() {
 		return surname;
 	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-
+	
 	public String getEmail() {
 		return email;
 	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	
+	public Integer getPrice() {
+		return price;
 	}
-
+	
 	public List<Phone> getPhones() {
 		return phones;
 	}
-
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+	
 	public void setPhones(List<Phone> phones) {
 		this.phones = phones;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", name=" + name + ", surname=" + surname + ", email=" + email + ", price=" + price
+				+ ", phones=" + phones + "]";
 	}
 
 	@Override
@@ -71,6 +87,7 @@ public class Order {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((phones == null) ? 0 : phones.hashCode());
+		result = prime * result + ((price == null) ? 0 : price.hashCode());
 		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
 		return result;
 	}
@@ -104,17 +121,17 @@ public class Order {
 				return false;
 		} else if (!phones.equals(other.phones))
 			return false;
+		if (price == null) {
+			if (other.price != null)
+				return false;
+		} else if (!price.equals(other.price))
+			return false;
 		if (surname == null) {
 			if (other.surname != null)
 				return false;
 		} else if (!surname.equals(other.surname))
 			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Order [id=" + id + ", name=" + name + ", surname=" + surname + ", email=" + email + ", phones=" + phones + "]";
 	}
 	
 }

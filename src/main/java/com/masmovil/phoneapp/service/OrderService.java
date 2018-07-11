@@ -50,6 +50,7 @@ public class OrderService {
 		result.setSurname(wrapper.getSurname());
 		result.setEmail(wrapper.getEmail());
 		result.setPhones(getPhones(wrapper.getPhones()));
+		result.setPrice(result.getPhones().stream().mapToInt(phone -> phone.getPrice()).sum());
 		return result;
 	}
 	
