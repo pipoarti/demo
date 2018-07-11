@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.masmovil.phoneapp.domain.Order;
-import com.masmovil.phoneapp.domain.PhoneOrderWrapper;
 import com.masmovil.phoneapp.service.OrderService;
+import com.masmovil.phoneapp.wrapper.PhoneOrderWrapper;
 
 @RestController
 @RequestMapping("/Orders")

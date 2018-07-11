@@ -1,4 +1,4 @@
-package com.masmovil.phoneapp.domain;
+package com.masmovil.phoneapp.wrapper;
 
 import java.util.List;
 

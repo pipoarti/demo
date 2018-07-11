@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,8 @@ import org.springframework.stereotype.Service;
 
 import com.masmovil.phoneapp.domain.Order;
 import com.masmovil.phoneapp.domain.Phone;
-import com.masmovil.phoneapp.domain.PhoneOrderWrapper;
 import com.masmovil.phoneapp.repository.OrderRepository;
+import com.masmovil.phoneapp.wrapper.PhoneOrderWrapper;
 
 @Service
 public class OrderService {
@@ -36,9 +37,11 @@ public class OrderService {
 	}
 	
 	public Order save(PhoneOrderWrapper phoneOrderWrapper) {
+		Long id = phoneOrderWrapper.getId();
+		if(id != null && orderRepository.existsById(id)) 
+			throw new EntityExistsException(String.format("Order(%s) already exists.", id));
 		Order order = phoneOrderWrapperToOrder(phoneOrderWrapper);
-		return orderRepository.save(order);
-		
+		return  orderRepository.save(order);
 	}
 
 	private Order phoneOrderWrapperToOrder(PhoneOrderWrapper wrapper) {
