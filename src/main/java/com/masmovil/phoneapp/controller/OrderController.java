@@ -26,7 +26,7 @@ import com.masmovil.phoneapp.wrapper.PhoneOrderWrapper;
 public class OrderController {
 	
 	private static final String PATH_ID = "/{id}";
-	protected final Logger LOG = LoggerFactory.getLogger(this.getClass());
+	protected final Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	OrderService orderService;
@@ -46,7 +46,7 @@ public class OrderController {
 	@PostMapping
 	public ResponseEntity<Order> createOrder(@Valid @RequestBody PhoneOrderWrapper phoneOrderWrapper) {
 		Order savedOrder = orderService.save(phoneOrderWrapper);
-		LOG.info("Order done: " + savedOrder.toString());
+		log.info(String.format("Order done: %s", savedOrder.toString()));
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(PATH_ID).buildAndExpand(savedOrder.getId()).toUri();
 		return ResponseEntity.created(location).build();
 	}
