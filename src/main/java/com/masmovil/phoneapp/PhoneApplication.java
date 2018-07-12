@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PhoneApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PhoneApplication.class, args);
+		SpringApplication.run(PhoneApplicationTest.class, args);
 	}
 }

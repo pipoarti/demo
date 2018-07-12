@@ -17,22 +17,22 @@ public class PhoneAppConfig {
 	
 	@Bean
 	public PhoneController phoneController(PhoneService phoneService) {
-		return new PhoneController(phoneService);
+		return new PhoneController();
 	}
 	
 	@Bean
 	public OrderController orderController(OrderService orderService) {
-		return new OrderController(orderService);
+		return new OrderController();
 	}
 	
     @Bean
     public PhoneService phoneService(PhoneRepository phoneRepository) {
-        return new PhoneServiceImpl(phoneRepository);
+        return new PhoneServiceImpl();
     }
     
     @Bean
     public OrderService orderService(OrderRepository orderRepository, PhoneService phoneService) {
-        return new OrderServiceImpl(orderRepository, phoneService);
+        return new OrderServiceImpl();
     }
     
 }

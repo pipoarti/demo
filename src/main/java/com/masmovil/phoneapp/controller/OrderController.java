@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,11 +28,8 @@ public class OrderController {
 	private static final String PATH_ID = "/{id}";
 	protected final Logger log = LoggerFactory.getLogger(this.getClass());
 	
+	@Autowired
 	private OrderService orderService;
-	
-	public OrderController(OrderService orderService) {
-		this.orderService = orderService;
-	}
 	
 	@GetMapping
 	public ResponseEntity<List<Order>> getOrders() {

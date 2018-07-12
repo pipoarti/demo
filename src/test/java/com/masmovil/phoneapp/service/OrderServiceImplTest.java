@@ -34,7 +34,7 @@ public class OrderServiceImplTest extends ServiceBaseTest {
 	
 	@Before
 	public void setUp() {
-		orderService = new OrderServiceImpl(orderRepository, phoneService);
+		orderService = new OrderServiceImpl();
 		orderServiceSpy = spy(orderService);
 	}
 	

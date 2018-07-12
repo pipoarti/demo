@@ -27,7 +27,7 @@ public class PhoneServiceImplTest extends ServiceBaseTest {
 	
 	@Before
 	public void setUp() {
-		phoneService = new PhoneServiceImpl(phoneRepository);
+		phoneService = new PhoneServiceImpl();
 	}
 	
 	@Test

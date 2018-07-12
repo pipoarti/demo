@@ -6,6 +6,8 @@ import java.util.Optional;
 
 import javax.persistence.EntityExistsException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.masmovil.phoneapp.domain.Order;
@@ -17,16 +19,14 @@ import com.masmovil.phoneapp.service.PhoneService;
 import com.masmovil.phoneapp.wrapper.PhoneOrderWrapper;
 
 @Service
+@Primary
 public class OrderServiceImpl implements OrderService {
 
+	@Autowired
 	private OrderRepository orderRepository;
+	@Autowired
 	private PhoneService phoneService;
 
-	public OrderServiceImpl(final OrderRepository orderRepository, final PhoneService phoneService) {
-		this.orderRepository = orderRepository;
-		this.phoneService = phoneService;
-	}
-	
 	public List<Order> getOrders() {
 		return (List<Order>) orderRepository.findAll();  
 	}
