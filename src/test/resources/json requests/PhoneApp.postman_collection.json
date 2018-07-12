@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "0a2a7abb-0c58-4637-9c96-b2ab35717c62",
+		"name": "PhoneApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetPhones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/Phones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Phones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/Orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostOrders",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"Sergio\",\r\n\t\"surname\": \"Artigas\",\r\n\t\"email\": \"sergio.artigas@gmail.com\",\r\n\t\"phones\":[1,2,3]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
