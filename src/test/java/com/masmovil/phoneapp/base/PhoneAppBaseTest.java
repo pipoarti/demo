@@ -1,4 +1,4 @@
-package com.masmovil.phoneapp.service;
+package com.masmovil.phoneapp.base;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import com.masmovil.phoneapp.domain.Order;
 import com.masmovil.phoneapp.domain.Phone;
 import com.masmovil.phoneapp.wrapper.PhoneOrderWrapper;
 
-public class ServiceBaseTest {
+public class PhoneAppBaseTest {
 	
 	protected static final Integer PHONES_SIZE = new Integer(2);
 	protected static final Integer ORDERS_SIZE = new Integer(2);

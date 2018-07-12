@@ -15,12 +15,13 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import com.masmovil.phoneapp.base.PhoneAppBaseTest;
 import com.masmovil.phoneapp.domain.Phone;
 import com.masmovil.phoneapp.repository.PhoneRepository;
 import com.masmovil.phoneapp.service.impl.PhoneServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
-public class PhoneServiceImplTest extends ServiceBaseTest {
+public class PhoneServiceImplTest extends PhoneAppBaseTest {
 
 	private PhoneServiceImpl phoneService;
 	private @Mock PhoneRepository phoneRepository;

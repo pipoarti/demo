@@ -18,6 +18,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import com.masmovil.phoneapp.base.PhoneAppBaseTest;
 import com.masmovil.phoneapp.domain.Order;
 import com.masmovil.phoneapp.repository.OrderRepository;
 import com.masmovil.phoneapp.service.impl.OrderServiceImpl;
@@ -25,7 +26,7 @@ import com.masmovil.phoneapp.service.impl.PhoneServiceImpl;
 import com.masmovil.phoneapp.wrapper.PhoneOrderWrapper;
 
 @RunWith(MockitoJUnitRunner.class)
-public class OrderServiceImplTest extends ServiceBaseTest {
+public class OrderServiceImplTest extends PhoneAppBaseTest {
 	
 	private OrderServiceImpl orderService;
 	private @Mock OrderServiceImpl orderServiceSpy;

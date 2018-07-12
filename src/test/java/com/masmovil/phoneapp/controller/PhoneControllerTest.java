@@ -13,10 +13,9 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import com.masmovil.phoneapp.base.PhoneAppBaseTest;
 import com.masmovil.phoneapp.exception.EntityNotFoundException;
 import com.masmovil.phoneapp.service.PhoneService;
-import com.masmovil.phoneapp.service.ServiceBaseTest;
-
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -25,7 +24,7 @@ import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = PhoneController.class)
-public class PhoneControllerTest extends ServiceBaseTest {
+public class PhoneControllerTest extends PhoneAppBaseTest {
 
     @Autowired
     private MockMvc mockMvc;

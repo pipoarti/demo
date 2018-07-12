@@ -13,9 +13,8 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import com.masmovil.phoneapp.base.PhoneAppBaseTest;
 import com.masmovil.phoneapp.service.OrderService;
-import com.masmovil.phoneapp.service.ServiceBaseTest;
-
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -24,7 +23,7 @@ import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = OrderController.class)
-public class OrderControllerTest extends ServiceBaseTest {
+public class OrderControllerTest extends PhoneAppBaseTest {
 	
 	private static final String TYPE = "application/json;charset=UTF-8";
 
