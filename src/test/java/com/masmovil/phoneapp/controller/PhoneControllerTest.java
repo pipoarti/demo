@@ -25,7 +25,7 @@ import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = PhoneController.class)
-public class PhonesControllerTest extends ServiceBaseTest {
+public class PhoneControllerTest extends ServiceBaseTest {
 
     @Autowired
     private MockMvc mockMvc;
