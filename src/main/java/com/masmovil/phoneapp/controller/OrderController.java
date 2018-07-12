@@ -7,7 +7,6 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,8 +27,11 @@ public class OrderController {
 	private static final String PATH_ID = "/{id}";
 	protected final Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	@Autowired
-	OrderService orderService;
+	private OrderService orderService;
+	
+	public OrderController(OrderService orderService) {
+		this.orderService = orderService;
+	}
 	
 	@GetMapping
 	public ResponseEntity<List<Order>> getOrders() {
@@ -46,7 +48,7 @@ public class OrderController {
 	@PostMapping
 	public ResponseEntity<Order> createOrder(@Valid @RequestBody PhoneOrderWrapper phoneOrderWrapper) {
 		Order savedOrder = orderService.save(phoneOrderWrapper);
-		log.info(String.format("Order done: %s", savedOrder.toString()));
+		log.info(String.format("The order has succesfully completed: %s", savedOrder.toString()));
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(PATH_ID).buildAndExpand(savedOrder.getId()).toUri();
 		return ResponseEntity.created(location).build();
 	}

@@ -2,7 +2,6 @@ package com.masmovil.phoneapp.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,8 +15,11 @@ import com.masmovil.phoneapp.service.PhoneService;
 @RequestMapping("/Phones")
 public class PhoneController {
 	
-	@Autowired
-	PhoneService phoneService;
+	private PhoneService phoneService;
+	
+	public PhoneController(PhoneService phoneService) {
+		this.phoneService = phoneService;
+	}
 	
 	@GetMapping
 	public ResponseEntity<List<Phone>> getPhones() {

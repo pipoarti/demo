@@ -53,4 +53,10 @@ public class Phone {
 		this.price = price;
 	}
 
+	@Override
+	public String toString() {
+		return "Phone [id=" + id + ", name=" + name + ", description=" + description + ", image=" + image + ", price="
+				+ price + "]";
+	}
+
 }

@@ -72,5 +72,11 @@ public class Order {
 	public void setPhones(List<Phone> phones) {
 		this.phones = phones;
 	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", name=" + name + ", surname=" + surname + ", email=" + email + ", price=" + price
+				+ ", phones=" + phones + "]";
+	}
 	
 }

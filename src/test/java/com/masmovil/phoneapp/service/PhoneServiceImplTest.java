@@ -17,16 +17,17 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import com.masmovil.phoneapp.domain.Phone;
 import com.masmovil.phoneapp.repository.PhoneRepository;
+import com.masmovil.phoneapp.service.impl.PhoneServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
-public class PhoneServiceTest extends ServiceBaseTest {
+public class PhoneServiceImplTest extends ServiceBaseTest {
 
-	private PhoneService phoneService;
+	private PhoneServiceImpl phoneService;
 	private @Mock PhoneRepository phoneRepository;
 	
 	@Before
 	public void setUp() {
-		phoneService = new PhoneService(phoneRepository);
+		phoneService = new PhoneServiceImpl(phoneRepository);
 	}
 	
 	@Test

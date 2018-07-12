@@ -20,19 +20,21 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import com.masmovil.phoneapp.domain.Order;
 import com.masmovil.phoneapp.repository.OrderRepository;
+import com.masmovil.phoneapp.service.impl.OrderServiceImpl;
+import com.masmovil.phoneapp.service.impl.PhoneServiceImpl;
 import com.masmovil.phoneapp.wrapper.PhoneOrderWrapper;
 
 @RunWith(MockitoJUnitRunner.class)
-public class OrderServiceTest extends ServiceBaseTest {
+public class OrderServiceImplTest extends ServiceBaseTest {
 	
-	private OrderService orderService;
-	private @Mock OrderService orderServiceSpy;
+	private OrderServiceImpl orderService;
+	private @Mock OrderServiceImpl orderServiceSpy;
 	private @Mock OrderRepository orderRepository;
-	private @Mock PhoneService phoneService;
+	private @Mock PhoneServiceImpl phoneService;
 	
 	@Before
 	public void setUp() {
-		orderService = new OrderService(orderRepository, phoneService);
+		orderService = new OrderServiceImpl(orderRepository, phoneService);
 		orderServiceSpy = spy(orderService);
 	}
 	
